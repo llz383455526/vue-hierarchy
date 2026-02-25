@@ -1,0 +1,76 @@
+{
+  "name": "vue-hierarchy",
+  "displayName": "Vue Hierarchy",
+  "description": "Display Vue component Options API structure in a sidebar tree view with click-to-navigate support",
+  "version": "0.0.1",
+  "publisher": "vue-hierarchy",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:vue"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vue-hierarchy",
+          "title": "Vue Hierarchy",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "vue-hierarchy": [
+        {
+          "id": "vueHierarchyView",
+          "name": "Structure",
+          "contextualTitle": "Vue Hierarchy"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "vueHierarchy.refresh",
+        "title": "Refresh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "vueHierarchy.gotoLine",
+        "title": "Go to Definition"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "vueHierarchy.refresh",
+          "when": "view == vueHierarchyView",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "node esbuild.js --production",
+    "watch": "node esbuild.js --watch",
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.29.0",
+    "@types/node": "^18.19.130",
+    "@types/vscode": "^1.74.0",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.23.0",
+    "@vue/compiler-sfc": "^3.4.0"
+  }
+}
