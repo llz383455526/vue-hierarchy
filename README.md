@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="resources/icon.svg" width="80" height="80" alt="Vue Hierarchy Logo">
+  <strong>🌿</strong>
 </p>
 
 <h1 align="center">Vue Hierarchy</h1>

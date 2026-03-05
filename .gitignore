@@ -6,7 +6,7 @@ dist/
 out/
 
 # Package
-*.vsix
+# *.vsix
 
 # IDE
 .vscode/*

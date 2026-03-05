@@ -1,8 +1,8 @@
 {
   "name": "vue-hierarchy",
   "displayName": "Vue Hierarchy",
-  "description": "Display Vue component Options API structure in a sidebar tree view with click-to-navigate support",
-  "version": "0.0.1",
+  "description": "Display Vue component structure (Options API & Composition API / script setup) in a sidebar tree view with click-to-navigate support",
+  "version": "1.0.0",
   "publisher": "vue-hierarchy",
   "license": "MIT",
   "engines": {
@@ -44,13 +44,65 @@
       {
         "command": "vueHierarchy.gotoLine",
         "title": "Go to Definition"
+      },
+      {
+        "command": "vueHierarchy.gotoRef",
+        "title": "Go to Reference",
+        "icon": "$(references)"
+      },
+      {
+        "command": "vueHierarchy.filterCategories",
+        "title": "Filter Categories",
+        "icon": "$(filter)"
+      },
+      {
+        "command": "vueHierarchy.gotoMember",
+        "title": "Go to Member",
+        "icon": "$(search)"
+      },
+      {
+        "command": "vueHierarchy.toggleCollapse",
+        "title": "Toggle Expand/Collapse All",
+        "icon": "$(fold)"
+      },
+      {
+        "command": "vueHierarchy.focusCategory",
+        "title": "Focus Category",
+        "icon": "$(target)"
       }
     ],
     "menus": {
       "view/title": [
         {
+          "command": "vueHierarchy.filterCategories",
+          "when": "view == vueHierarchyView",
+          "group": "navigation"
+        },
+        {
+          "command": "vueHierarchy.gotoMember",
+          "when": "view == vueHierarchyView",
+          "group": "navigation"
+        },
+        {
+          "command": "vueHierarchy.focusCategory",
+          "when": "view == vueHierarchyView",
+          "group": "navigation"
+        },
+        {
+          "command": "vueHierarchy.toggleCollapse",
+          "when": "view == vueHierarchyView",
+          "group": "navigation"
+        },
+        {
           "command": "vueHierarchy.refresh",
           "when": "view == vueHierarchyView",
+          "group": "2_actions"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "vueHierarchy.gotoRef",
+          "when": "view == vueHierarchyView && viewItem != template && viewItem != style && viewItem != lifecycle && viewItem != components && viewItem != directives && viewItem != mixins && viewItem != interface",
           "group": "navigation"
         }
       ]
