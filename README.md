@@ -193,14 +193,9 @@ npx tsc --noEmit
 | [**esbuild**](https://esbuild.github.io/)                      | 极速打包构建                           |
 | [**TypeScript**](https://www.typescriptlang.org/)              | 类型安全开发                           |
 
-## 🗺 Roadmap
+## 🗺 效果演示
 
-- [ ] Composition API (`<script setup>`) 支持
-- [ ] Vue 文件 `<template>` 内部结构解析
-- [ ] 节点数量标注（如 `props (3)`）
-- [ ] 自定义分类排序
-- [ ] 配置项（隐藏特定分类、折叠状态记忆）
-- [ ] 单元测试覆盖
+[演示效果](./screen_capture.mp4)
 
 ## License
 
